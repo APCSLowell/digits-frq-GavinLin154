@@ -8,12 +8,14 @@ public class Digits
 	public Digits(int num)
 	{ /* to be implemented in part (a) */ 
 	    digitList = new ArrayList <Integer>();
-	    if(num%10 == 0) {
+	    if(num == 0) {
 		digitList.add(0);
-	    } else if(num%10 > 0) {
-		digitList.add(num%10);
-		Digits{num/10);
-	    }		    
+	    }
+	    int n = num;
+	    while(n > 0) {
+		digitList.add(0, n%10);
+		n = n/10;
+	    }
 	}
 
 	public boolean isStrictlyIncreasing()
